@@ -1166,7 +1166,7 @@
         ],
         "icon-size": 1,
         "text-anchor": "top",
-        "text-field": "{name:ja}",
+        "text-field": "{name}",
         "text-max-width": 8
       },
       "paint": {
@@ -1188,7 +1188,7 @@
       ],
       "layout": {
         "symbol-placement": "line",
-        "text-field": "{name:ja}",
+        "text-field": "{name}",
         "text-font": [
           "NotoSansCJKjp-DemiLight"
         ],
@@ -1235,7 +1235,7 @@
         ]
       ],
       "layout": {
-        "text-field": "{name:ja}",
+        "text-field": "{name}",
         "text-font": [
           "NotoSansCJKjp-DemiLight"
         ],
@@ -1282,7 +1282,7 @@
         ]
       ],
       "layout": {
-        "text-field": "{name:ja}",
+        "text-field": "{name}",
         "text-font": [
           "NotoSansCJKjp-DemiLight"
         ],
@@ -1327,7 +1327,7 @@
         ]
       ],
       "layout": {
-        "text-field": "{name:ja}",
+        "text-field": "{name}",
         "text-font": [
           "NotoSansCJKjp-DemiLight"
         ],
