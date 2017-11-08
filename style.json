@@ -2,10 +2,10 @@
   "version": 8,
   "name": "Klokantech Basic JA",
   "center": [
-    -74.0217,
-    40.6897
+    -73.9712
+    40.7452,
   ],
-  "zoom": 5,
+  "zoom": 12.72,
   "bearing": 0,
   "pitch": 0,
   "sources": {
