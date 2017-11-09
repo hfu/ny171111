@@ -22,6 +22,7 @@ map.addControl(new mapboxgl.NavigationControl())
 var $list = []
 var $index = 0
 var $msg = new SpeechSynthesisUtterance()
+$msg.lang = 'en-US'
 var speak = function() {
   var s = $list[$index]
   if(s) {
