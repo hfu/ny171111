@@ -351,8 +351,7 @@
         "text-field": "{housenumber}",
         "text-size": 10,
         "text-font": [
-          "Klokantech Noto Sans Regular",
-          "Klokantech Noto Sans CJK Regular"
+          "NotoSansCJKjp-Bold"
         ]
       },
       "paint": {
@@ -1157,7 +1156,7 @@
       "layout": {
         "text-size": 11,
         "text-font": [
-          "NotoSansCJKjp-DemiLight"
+          "NotoSansCJKjp-Bold"
         ],
         "visibility": "visible",
         "text-offset": [
@@ -1190,7 +1189,7 @@
         "symbol-placement": "line",
         "text-field": "{name}",
         "text-font": [
-          "NotoSansCJKjp-DemiLight"
+          "NotoSansCJKjp-Bold"
         ],
         "text-transform": "uppercase",
         "text-letter-spacing": 0.1,
@@ -1237,7 +1236,7 @@
       "layout": {
         "text-field": "{name}",
         "text-font": [
-          "NotoSansCJKjp-DemiLight"
+          "NotoSansCJKjp-Bold"
         ],
         "text-max-width": 6,
         "text-size": {
@@ -1284,7 +1283,7 @@
       "layout": {
         "text-field": "{name}",
         "text-font": [
-          "NotoSansCJKjp-DemiLight"
+          "NotoSansCJKjp-Bold"
         ],
         "text-max-width": 10,
         "text-size": {
@@ -1329,7 +1328,7 @@
       "layout": {
         "text-field": "{name}",
         "text-font": [
-          "NotoSansCJKjp-DemiLight"
+          "NotoSansCJKjp-Bold"
         ],
         "text-max-width": 10,
         "text-size": {

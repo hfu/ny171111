@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ny171111</title>
+<link rel="stylesheet" type="text/css" href="https://api.mapbox.com/mapbox-gl-js/v0.41.0/mapbox-gl.css" />
+<script src="https://api.mapbox.com/mapbox-gl-js/v0.41.0/mapbox-gl.js"></script>
+<style>
+body { margin:0; padding:0; }
+#map { position:absolute; top:0; bottom:0; width:100%; }
+</style>
+</head>
+<body>
+<div id='map'></div>
+<script>
+var map = new mapboxgl.Map({
+  container: 'map', style: 'style.json',
+  attributionControl: true, hash: true
+})
+map.addControl(new mapboxgl.NavigationControl())
+var $list = []
+var $index = 0
+var $msg = new SpeechSynthesisUtterance()
+var speak = function() {
+  var s = $list[$index]
+  if(s) {
+    $index++
+    $msg.text = s
+    console.log($msg.text)
+    speechSynthesis.speak($msg)
+  }
+}
+$msg.onend = speak
+var dump = function(e) {
+  var feats = map.queryRenderedFeatures({layers: ['poi_label']})
+  for(i in feats) {
+    var name = feats[i].properties.name
+    if(name && $list.indexOf(name) == -1) {
+      console.log(name)
+      $list.push(name)
+    }
+  }
+  if(!speechSynthesis.speaking) {
+    speak()
+  }
+}
+map.on('moveend', dump)
+map.on('load', dump)
+</script>
+</body>
+</html>
