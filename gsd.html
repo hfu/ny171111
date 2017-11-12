@@ -12,7 +12,7 @@ body { margin:0; padding:0; }
 #map { position:absolute; top:0; bottom:0; width:100%; }
 #con {
   background-color: rgba(255, 255, 255, 0.5); text-align: center;
-  top: 0; right: 0; left: 0; width: 200px; margin: auto;
+  top: 0; right: 0; left: 0; width: 300px; margin: auto;
   position: absolute; z-index: 1000; display: block;
   color: black; font-size: large; font-family: sans-serif;
 }
@@ -38,7 +38,9 @@ map.addControl(new mapboxgl.NavigationControl());
       turf.point(a.toArray()),
       turf.point(b.toArray())
     ) * 1000 / (2 * D)
-    con.innerHTML = 'GSD at ' + 2 * D + ' pixels in map center ' + gsd.toFixed(2) + 'm/pixel'
+    con.innerHTML = 'Map center GSD: ' + gsd.toFixed(2) + 'm/pixel<br/>' +
+      'z: ' + map.getZoom().toFixed(2) +
+      '<br/>caclulated at ' + 2 * D + ' pixels at map center.';
   })
 })
 
