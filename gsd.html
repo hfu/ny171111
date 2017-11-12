@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<title>ny171111/modern</title>
+<link rel='stylesheet' type='text/css' href='//api.mapbox.com/mapbox-gl-js/v0.34.0/mapbox-gl.css' />
+<script src="//api.mapbox.com/mapbox-gl-js/v0.34.0/mapbox-gl.js"></script>
+<script src='//npmcdn.com/@turf/turf/turf.min.js'></script>
+<style>
+body { margin:0; padding:0; }
+#map { position:absolute; top:0; bottom:0; width:100%; }
+#con {
+  background-color: rgba(255, 255, 255, 0.5); text-align: center;
+  top: 0; right: 0; left: 0; width: 200px; margin: auto;
+  position: absolute; z-index: 1000; display: block;
+  color: black; font-size: large; font-family: sans-serif;
+}
+</style>
+</head>
+<body>
+<div id='con'>-</div>
+<div id='map'></div>
+<script>
+const D = 1
+const p = new mapboxgl.Point(D, 0)
+const con = document.getElementById('con')
+const map = new mapboxgl.Map({
+  container: 'map', style: 'style.json',
+  attributionControl: true, hash: true
+})
+map.addControl(new mapboxgl.NavigationControl());
+['moveend', 'load'].map(v => {
+  map.on(v, (e) => {
+    const a = map.unproject(map.project(map.getCenter()).add(p))
+    const b = map.unproject(map.project(map.getCenter()).sub(p))
+    const gsd = turf.distance(
+      turf.point(a.toArray()),
+      turf.point(b.toArray())
+    ) * 1000 / (2 * D)
+    con.innerHTML = 'GSD at ' + 2 * D + ' pixels in map center ' + gsd.toFixed(2) + 'm/pixel'
+  })
+})
+
+</script>
+</body>
+</html>
